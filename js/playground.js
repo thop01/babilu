@@ -85,12 +85,19 @@ var createScene = function () {
     light.intensity = 0.7;
 
     // Our built-in 'ground' shape.
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 4, height: 4}, scene);
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
     const groundMaterial = new BABYLON.StandardMaterial("Ground Material", scene);
-    const groundTexture = new BABYLON.Texture("img/pattern_0013.png", scene);
+    const groundTexture = new BABYLON.Texture("img/grass.jpg", scene);
     groundMaterial.diffuseColor = BABYLON.Color3.Green();
     groundMaterial.diffuseTexture = groundTexture;
     ground.material = groundMaterial;
+
+    // Repeat the ground texture
+    groundTexture.uScale = 6;
+    groundTexture.vScale = 6;
+
+    // Load a gltf model
+
 
     return scene;
 };

@@ -10,8 +10,8 @@ html, body {
 }
 #renderCanvas {
     position:absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     touch-action: none;
 }
 
@@ -19,4 +19,5 @@ html, body {
     position:absolute; 
     z-index: 100;
     font-family: "comic sans ms";
+    /* color:white; */
 }
