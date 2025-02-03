@@ -52,7 +52,14 @@ var createScene = function () {
     light.intensity = 0.7;
 
     // Our built-in 'ground' shape.
-    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+
+    const groundMaterial = new BABYLON.StandardMaterial("Ground Material", scene);
+    groundMaterial.diffuseColor = BABYLON.Color3.Red();
+    ground.material = groundMaterial;
+
+   
+
 
     return scene;
 };
