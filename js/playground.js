@@ -32,6 +32,39 @@
 // }
 
 
+// var createScene = function () {
+//     // This creates a basic Babylon Scene object (non-mesh)
+//     var scene = new BABYLON.Scene(engine);
+
+//     // This creates and positions a free camera (non-mesh)
+//     var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+
+//     // This targets the camera to scene origin
+//     camera.setTarget(BABYLON.Vector3.Zero());
+
+//     // This attaches the camera to the canvas
+//     camera.attachControl(canvas, true);
+
+//     // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+//     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+
+//     // Default intensity is 1. Let's dim the light a small amount
+//     light.intensity = 0.7;
+
+//     // Our built-in 'ground' shape.
+//     const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+
+//     const groundMaterial = new BABYLON.StandardMaterial("Ground Material", scene);
+//     groundMaterial.diffuseColor = BABYLON.Color3.Red();
+//     ground.material = groundMaterial;
+
+   
+
+
+//     return scene;
+// };
+
+
 var createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     var scene = new BABYLON.Scene(engine);
@@ -52,14 +85,12 @@ var createScene = function () {
     light.intensity = 0.7;
 
     // Our built-in 'ground' shape.
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
-
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 4, height: 4}, scene);
     const groundMaterial = new BABYLON.StandardMaterial("Ground Material", scene);
-    groundMaterial.diffuseColor = BABYLON.Color3.Red();
+    const groundTexture = new BABYLON.Texture("img/pattern_0013.png", scene);
+    groundMaterial.diffuseColor = BABYLON.Color3.Green();
+    groundMaterial.diffuseTexture = groundTexture;
     ground.material = groundMaterial;
-
-   
-
 
     return scene;
 };
