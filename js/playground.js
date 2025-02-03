@@ -96,7 +96,13 @@ var createScene = function () {
     groundTexture.uScale = 6;
     groundTexture.vScale = 6;
 
-    // Load a gltf model
+    
+     BABYLON.SceneLoader.ImportMesh("", Assets.meshes.Yeti.rootUrl, Assets.meshes.Yeti.filename, scene, function (newMeshes) {
+
+        newMeshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+
+     });
+
 
 
     return scene;
