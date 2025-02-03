@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Babylon Template</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="renderCanvas"></canvas>
+<div class="overlay">
+   <header>
+    <h1>Babi-lu</h1>
+   </header>
+</div>
+
+<script src="js/playground.js"></script>
+<script>
+    const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+    const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+    
+
+    const scene = createScene(); //Call the createScene function
+    // Register a render loop to repeatedly render the scene
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+    // Watch for browser/canvas resize events
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+</script>
+
+</body>
+
+</html>
